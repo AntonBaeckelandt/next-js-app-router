@@ -1,12 +1,16 @@
 import orderApi from "@/dashboard/orderApi";
+import Link from "next/link";
 import { Suspense } from "react";
 
 export default function Orders() {
   return (
-    <Suspense fallback={<p>Loading Indicator</p>}>
-      {/* @ts-expect-error Async Server Component */}
-      <OrderList />
-    </Suspense>
+    <>
+      <Suspense fallback={<p>Loading Indicator</p>}>
+        {/* @ts-expect-error Async Server Component */}
+        <OrderList />
+      </Suspense>
+      <Link href={"/dashboard/account-info"}>To account info</Link>
+    </>
   );
 }
 
