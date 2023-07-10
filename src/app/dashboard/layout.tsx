@@ -1,4 +1,5 @@
 // import './globals.css'
+import { Counter } from '@/app/dashboard/counter'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <header>
           <span>Header</span>
+          <Counter />
         </header>
         <main>
           {children}
