@@ -1,9 +1,9 @@
 export default function Loading({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode
 }) {
-    return (
-        <span>Loading</span>
-    );
+  return (
+    <span>Loading</span>
+  );
 }
