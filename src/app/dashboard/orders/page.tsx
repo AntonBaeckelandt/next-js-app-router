@@ -1,4 +1,4 @@
-import orderApi from "@/dashboard/orderApi";
+import orderServices from "@/dashboard/domain/orderServices";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -6,7 +6,6 @@ export default function Orders() {
   return (
     <>
       <Suspense fallback={<p>Loading Indicator</p>}>
-        {/* @ts-expect-error Async Server Component */}
         <OrderList />
       </Suspense>
       <Link href={"/dashboard/account-info"}>To account info</Link>
@@ -16,13 +15,13 @@ export default function Orders() {
 
 
 async function OrderList() {
-  const orders = await orderApi.getOrders();
+  const orders = await orderServices.getOrders();
 
   return (
     <ul>
       {
-        orders.map((order: string) =>
-          <li key={order}>- {order}</li>
+        orders.map((order) =>
+          <li key={order.id}> {order.name}</li>
         )
       }
     </ul>

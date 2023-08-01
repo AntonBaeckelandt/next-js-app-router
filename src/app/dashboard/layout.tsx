@@ -1,4 +1,3 @@
-// import './globals.css'
 import { Counter } from '@/app/dashboard/counter'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
